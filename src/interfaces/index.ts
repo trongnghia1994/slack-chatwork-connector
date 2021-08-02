@@ -1,4 +1,9 @@
 export interface SlackBotRequest {
-  TOKEN: string
-  HOOK: string
+  	SLACK_TOKEN: string
+  	SLACK_HOOK: string
+}
+
+export interface ChatworkRequest {
+	CHATWORK_API_ROOT: string
+	CHATWORK_API_TOKEN: string
 }

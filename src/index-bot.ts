@@ -9,8 +9,8 @@ const MORGAN_GIF = 'https://gph.is/g/4gA20OJ'
 const MAZZARRI_GIF = 'https://gph.is/g/4oLzgVP'
 
 async function init(): Promise<void> {
-  const { HOOK, TOKEN } = await loadEnvironmentVariables<SlackBotRequest>()
-  const postMessage = post(HOOK)({ Authorization: `Bearer ${TOKEN}` })
+  const { SLACK_HOOK, SLACK_TOKEN } = await loadEnvironmentVariables<SlackBotRequest>()
+  const postMessage = post(SLACK_HOOK)({ Authorization: `Bearer ${SLACK_TOKEN}` })
 
   log('Starting...')
 
@@ -19,7 +19,7 @@ async function init(): Promise<void> {
     const hours = time.split(':')[0]
     const minutes = time.split(':')[1]
 
-    if (`${hours}:${minutes}` === STANDUP_TIME) {
+    // if (`${hours}:${minutes}` === STANDUP_TIME) {
       clearInterval(interval)
 
       await postMessage({ text: '<!channel> standup!', as_user: true })
@@ -34,9 +34,9 @@ async function init(): Promise<void> {
 
       await postMessage({ text: MAZZARRI_GIF, as_user: true })
       log('Sent message: Mazzarri - GIF')
-    } else {
-      log('Waiting...')
-    }
+    // } else {
+    //   log('Waiting...')
+    // }
   }, 5000)
 }
 
