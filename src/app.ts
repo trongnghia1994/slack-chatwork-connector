@@ -1,11 +1,12 @@
 // app.ts
+// initialize configuration
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import chatWorkConnector from "./routes/chatworkConnector";
-import dotenv from "dotenv";
+import slackConnector from "./routes/slackConnector";
 import connectDB from "./config/database";
 
-// initialize configuration
-dotenv.config();
 connectDB();
 
 // Create Express app
@@ -19,7 +20,8 @@ app.use(express.urlencoded({
 // A sample route, now plays as a web hook for Slack
 
 // Use the routes
-app.use('/', chatWorkConnector);
+app.use('/chatworkCon', chatWorkConnector);
+app.use('/slackCon', slackConnector);
 
 // Start the Express server
 app.listen(3000, () => console.log('Server running on port 3000!'))

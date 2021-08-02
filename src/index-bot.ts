@@ -9,8 +9,8 @@ const MORGAN_GIF = 'https://gph.is/g/4gA20OJ'
 const MAZZARRI_GIF = 'https://gph.is/g/4oLzgVP'
 
 async function init(): Promise<void> {
-  const { SLACK_HOOK, SLACK_TOKEN } = await loadEnvironmentVariables<SlackBotRequest>()
-  const postMessage = post(SLACK_HOOK)({ Authorization: `Bearer ${SLACK_TOKEN}` })
+  const { SLACK_HOOK, SLACK_BOT_TOKEN } = await loadEnvironmentVariables<SlackBotRequest>()
+  const postMessage = post(SLACK_HOOK)({ Authorization: `Bearer ${SLACK_BOT_TOKEN}` })
 
   log('Starting...')
 

@@ -1,5 +1,5 @@
 export interface SlackBotRequest {
-  	SLACK_TOKEN: string
+  	SLACK_BOT_TOKEN: string
   	SLACK_HOOK: string
 }
 
