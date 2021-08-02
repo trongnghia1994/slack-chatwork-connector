@@ -2,7 +2,7 @@ import * as express from "express";
 import Map, { IMap } from "../models/map";
 import ChatworkApi from "chatwork-api-client";
 
-const apiToken = process.env.chatWorkApi_TOKEN;
+const apiToken = process.env.CHATWORK_API_TOKEN;
 const chatWorkApi = new ChatworkApi(apiToken);
 
 const router = express.Router();
