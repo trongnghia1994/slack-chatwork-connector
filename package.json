@@ -13,23 +13,8 @@
     "build": "tsc",
     "prestart": "npm run build",
     "start-app": "NODE_ENV=production node ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anthonypenna/node-typescript-template.git"
-  },
-  "keywords": [
-    "slack",
-    "bot",
-    "user",
-    "standup"
-  ],
-  "author": "anthonypenna",
+  },  
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/anthonypenna/slack-bot-user-standup/issues"
-  },
-  "homepage": "https://github.com/anthonypenna/slack-bot-user-standup#readme",
   "devDependencies": {
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.4",
@@ -45,6 +30,7 @@
     "@slack/web-api": "^5.7.0",
     "@types/body-parser": "^1.19.1",
     "@types/express": "^4.17.13",
+    "@types/mongoose": "^5.11.97",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "chatwork-api-client": "^3.4.0",

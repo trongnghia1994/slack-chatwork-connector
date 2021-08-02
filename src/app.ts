@@ -2,6 +2,12 @@
 import express from "express";
 import bodyParser from "body-parser";
 import chatWorkConnector from "./routes/chatworkConnector";
+import dotenv from "dotenv";
+import connectDB from "./config/database";
+
+// initialize configuration
+dotenv.config();
+connectDB();
 
 // Create Express app
 const app = express()
