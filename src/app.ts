@@ -5,6 +5,7 @@ dotenv.config();
 import express from "express";
 import chatWorkConnector from "./routes/chatworkConnector";
 import slackConnector from "./routes/slackConnector";
+import slackOauth from "./routes/slack_redirect";
 import connectDB from "./config/database";
 
 connectDB();
@@ -22,6 +23,9 @@ app.use(express.urlencoded({
 // Use the routes
 app.use('/chatworkCon', chatWorkConnector);
 app.use('/slackCon', slackConnector);
+app.use('/api/v1/slack_oauth', slackOauth);
+
+const port = parseInt(process.env.APP_PORT)
 
 // Start the Express server
-app.listen(3000, () => console.log('Server running on port 3000!'))
+app.listen(port, () => console.log(`Server running on port ${port}!`))
